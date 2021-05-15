@@ -44,7 +44,7 @@ object Utils {
             msg,
             Snackbar.LENGTH_SHORT
         )
-            .setBackgroundTint(ContextCompat.getColor(this.context, R.color.pd_red))
+            .setBackgroundTint(ContextCompat.getColor(this.context, android.R.color.holo_red_light))
             .setActionTextColor(Color.WHITE)
             .show()
     }
