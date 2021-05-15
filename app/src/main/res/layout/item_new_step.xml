@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_no_step"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="6dp"
+            android:textColor="@android:color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="1." />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/et_step"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@android:color/darker_gray"
+            android:paddingTop="6dp"
+            android:textColor="@android:color/black"
+            android:textCursorDrawable="@null"
+            android:inputType="textCapSentences"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tv_no_step"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Cook the pasta with 100C temperature water in the sauce pan" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_new"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:gravity="center"
+            android:text="Add"
+            app:cornerRadius="24dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/et_step" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="item"
+            type="com.aloysius.recipeapp.bindingmodel.ItemRecipeBindingModel" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:background="?selectableItemBackground"
+        android:elevation="4dp"
+        app:cardElevation="4dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="8dp">
+
+            <ImageView
+                android:id="@+id/imageView"
+                imageUrl="@{item.recipeThumbnailUrl}"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintDimensionRatio="H,2:1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@drawable/ic_baseline_image_search_24" />
+
+            <TextView
+                android:id="@+id/tv_recipe_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:singleLine="true"
+                android:text="@{item.recipeName}"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toStartOf="@id/iv_expand"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/imageView"
+                tools:text="Recipe Name" />
+
+            <TextView
+                android:id="@+id/tv_difficulty_level"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:paddingTop="4dp"
+                android:layout_marginEnd="8dp"
+                android:textColor="@android:color/black"
+                android:text="@{item.getDisplayedDifficultyLevel(context)}"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toStartOf="@id/iv_expand"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_recipe_name"
+                tools:text="Difficulty level: 1/10" />
+
+            <ImageView
+                android:id="@+id/iv_expand"
+                android:layout_width="wrap_content"
+                android:visibility="gone"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="12dp"
+                android:background="?selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_baseline_expand_more_24"
+                app:layout_constraintBottom_toBottomOf="@id/tv_difficulty_level"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/imageView" />
+
+            <LinearLayout
+                android:id="@+id/ll_more_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="8dp"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_difficulty_level"
+                tools:visibility="visible">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:visibility="gone"
+                    android:alpha="0.5"
+                    android:background="@android:color/darker_gray" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/RecipeContentTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="10dp"
+                    android:text="@string/recipe_description" />
+
+                <TextView
+                    android:id="@+id/tv_recipe_desc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="10dp"
+                    android:singleLine="false"
+                    android:text="@{item.recipeDesc}"
+                    android:textColor="@android:color/black"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toStartOf="@id/iv_expand"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_recipe_name"
+                    tools:text="Description very long one no lie you, you see then u will know ady, multi line de very words to say" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_steps"
+                    style="@style/RecipeContentTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="10dp"
+                    android:text="@string/steps" />
+
+                <TableLayout
+                    android:id="@+id/ll_steps"
+                    android:layout_marginTop="4dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_ingredient"
+                    style="@style/RecipeContentTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="10dp"
+                    android:text="@string/ingredients" />
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/chip_ingredient"
+                    style="@style/Widget.MaterialComponents.Chip.Entry"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="8dp"
+                    app:singleLine="false">
+
+                </com.google.android.material.chip.ChipGroup>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_recipe_type"
+                    style="@style/RecipeContentTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="10dp"
+                    android:text="@string/recipe_types" />
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/chip_recipe_type"
+                    style="@style/Widget.MaterialComponents.Chip.Entry"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="8dp"
+                    app:singleLine="false">
+
+                </com.google.android.material.chip.ChipGroup>
+
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</layout>

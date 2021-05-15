@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/option_up"
+        android:icon="@drawable/ic_baseline_arrow_drop_up_24"
+        android:title="Move up" />
+    <item
+        android:id="@+id/option_remove"
+        android:icon="@drawable/ic_baseline_delete_24"
+        android:title="Remove" />
+    <item
+        android:id="@+id/option_down"
+        android:icon="@drawable/ic_baseline_arrow_drop_down_24"
+        android:title="Move down" />
+</menu>

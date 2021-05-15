@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="android:colorControlActivated">@color/colorSecondary</item>
+    </style>
+
+    <style name="RecipeContentTitle" parent="@style/Widget.AppCompat.TextView">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textStyle">bold</item>
+    </style>s
+
+    <style name="NewRecipeInputTitle" parent="@style/Widget.AppCompat.TextView">
+        <item name="android:paddingStart">3dp</item>
+        <item name="android:paddingEnd">3dp</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="NewRecipeInput" parent="Widget.AppCompat.EditText">
+        <item name="android:textSize">14sp</item>
+        <item name="android:backgroundTint">@android:color/darker_gray</item>
+        <item name="android:textCursorDrawable">@null</item>
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+</resources>

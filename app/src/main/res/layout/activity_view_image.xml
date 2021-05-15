@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/black"
+        android:fitsSystemWindows="true"
+        tools:background="@android:color/white"
+        tools:context=".ViewImageActivity">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null">
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/toolbar"
+                style="@style/Widget.MaterialComponents.Toolbar.Primary"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@color/colorViewImageToolBar" />
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <com.github.chrisbanes.photoview.PhotoView
+            android:id="@+id/photo_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:elevation="0dp" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

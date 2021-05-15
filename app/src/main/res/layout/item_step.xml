@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="item"
+            type="com.aloysius.recipeapp.bindingmodel.ItemStepBindingModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:animateLayoutChanges="false"
+        android:background="?selectableItemBackground"
+        android:gravity="start"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/iv_remove"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="4dp"
+            android:animateLayoutChanges="false"
+            android:background="?selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_baseline_delete_24"
+            android:visibility="@{item.ivRemoveVisibility()}" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_no_step"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="6dp"
+            android:text="@{item.noOfStep}"
+            android:textColor="@android:color/black"
+            tools:text="1." />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_step_desc"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingStart="4dp"
+            android:paddingTop="4dp"
+            android:paddingEnd="8dp"
+            android:paddingBottom="4dp"
+            android:text="@{item.stepDesc}"
+            android:textColor="@android:color/black"
+            android:textSize="14sp"
+            tools:text="Cook the pasta with 100C temperature water in the sauce pan the sauce pan" />
+
+        <ImageView
+            android:id="@+id/iv_up"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="4dp"
+            android:animateLayoutChanges="false"
+            android:background="?selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_baseline_arrow_drop_up_24"
+            android:visibility="@{item.ivUpVisibility()}" />
+
+        <ImageView
+            android:id="@+id/iv_down"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="4dp"
+            android:animateLayoutChanges="false"
+            android:background="?selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_baseline_arrow_drop_down_24"
+            android:visibility="@{item.ivDownVisibility()}" />
+
+    </LinearLayout>
+</layout>

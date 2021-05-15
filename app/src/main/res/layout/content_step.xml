@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <TableRow
+        android:id="@+id/tableRow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_no_step"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:lines="1"
+            android:layout_marginStart="4dp"
+            android:padding="6dp"
+            android:textColor="@android:color/black"
+            tools:text="1." />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_step_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="4dp"
+            android:paddingTop="4dp"
+            android:paddingEnd="8dp"
+            android:paddingBottom="4dp"
+            android:lines="1"
+            android:textColor="@android:color/black"
+            android:textSize="14sp"
+            tools:text="Cook the pasta with 100C temperature water in the sauce pan the sauce pan" />
+
+    </TableRow>
+</layout>
